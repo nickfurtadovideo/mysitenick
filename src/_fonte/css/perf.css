@@ -1,0 +1,4 @@
+/* Otimizações de desempenho */
+.home-mosaic.is-paused .home-mosaic-track,.logo-ribbon.is-paused .logo-track,.is-tab-hidden .home-mosaic-track,.is-tab-hidden .logo-track{animation-play-state:paused!important}
+/* seções abaixo da dobra só renderizam quando se aproximam da tela */
+#posts,#ugc,#contato{content-visibility:auto;contain-intrinsic-size:auto 900px}

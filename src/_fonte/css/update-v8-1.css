@@ -1,0 +1,84 @@
+/* V8.1 — paleta Onyx/Vivid Green, abertura em espiral, mosaico diagonal e títulos mais compactos */
+
+/* ===== Paleta (referência: Onyx #131313 · Vivid Green #00B000 · #88EF1B · Paper White #F0F0F0 · Stone Gray #777 · Light Green #BFEBBF · gradiente #0A0A0A→#008400→#00B000→#8CDB8C) ===== */
+:root{--paper:#f0f0f0;--mist:#f0f0f0;--forest:#131313;--coal:#0a0a0a;--accent:#00b000;--accent-rgb:0,176,0;--lime:#88ef1b;--lime-rgb:136,239,27;--leaf:#008400;--sage:#8cdb8c;--light-green:#bfebbf;--stone:#777777;--brand-gradient:linear-gradient(110deg,#0a0a0a 0%,#008400 38%,#00b000 62%,#8cdb8c 100%);--canvas:#0a0a0a;--canvas-end:#131313;--surface:#171717;--text:#f0f0f0;--muted:#a9a9a9;--line:rgba(240,240,240,.14);--header:rgba(10,10,10,.88);--button:#f0f0f0;--button-text:#0a0a0a;--palette-navy:#0a0a0a;--navy-rgb:10,10,10;--palette-white:#f0f0f0;--white-rgb:240,240,240;--palette-violet:#00b000;--violet-rgb:0,176,0;--palette-mint:#88ef1b;--mint-rgb:136,239,27}
+:root[data-theme=light]{--canvas:#f0f0f0;--canvas-end:#e4e4e4;--surface:#ffffff;--text:#131313;--muted:#4a4a4a;--line:rgba(19,19,19,.16);--header:rgba(240,240,240,.92);--button:#131313;--button-text:#f0f0f0;--palette-navy:#f0f0f0;--navy-rgb:240,240,240;--palette-white:#131313;--white-rgb:19,19,19;--accent:#008400;--accent-rgb:0,132,0;--palette-violet:#008400;--violet-rgb:0,132,0;--palette-mint:#00b000;--mint-rgb:0,176,0}
+html{background:#0a0a0a}
+body{background:radial-gradient(1100px 620px at 82% 8%,rgba(0,132,0,.20),transparent 62%),radial-gradient(900px 560px at 4% 96%,rgba(0,176,0,.10),transparent 60%),linear-gradient(165deg,var(--canvas) 0%,var(--canvas-end) 100%)!important;background-attachment:fixed}
+:root[data-theme=light] body{background:radial-gradient(1100px 620px at 82% 8%,rgba(0,176,0,.14),transparent 62%),linear-gradient(165deg,var(--canvas),var(--canvas-end))!important}
+.hero-headline em,.section-title em{background-image:linear-gradient(110deg,#00b000 8%,#88ef1b 55%,#8cdb8c 100%)!important;-webkit-background-clip:text;background-clip:text;color:transparent}
+:root[data-theme=light] .hero-headline em,:root[data-theme=light] .section-title em{background-image:linear-gradient(110deg,#131313,#008400 70%)!important}
+.live-dot{background:#88ef1b!important;box-shadow:0 0 16px rgba(136,239,27,.55)!important}
+
+/* ===== Títulos: entrelinha mais curta ===== */
+.hero-headline{line-height:1.03!important;padding-bottom:.12em!important;margin-bottom:.9rem!important}
+.section-title{line-height:1.05!important;padding-bottom:.1em!important;margin-bottom:.45rem!important}
+h2,.section-head h2{line-height:1.08}
+h3{line-height:1.18}
+
+/* ===== Home: mosaico diagonal em carrossel infinito ===== */
+.hero .hero-layout{grid-template-columns:minmax(0,1fr)}
+.hero>.hero-mosaic:not(.horizon):not(.floater){--cw:clamp(118px,11.4vw,188px);--gap:clamp(10px,1vw,16px);position:absolute;z-index:1;top:0;right:0;bottom:0;width:min(64vw,1200px);overflow:hidden;pointer-events:none;
+ -webkit-mask-image:linear-gradient(90deg,rgba(0,0,0,0) 0,rgba(0,0,0,.06) 9%,rgba(0,0,0,.28) 19%,rgba(0,0,0,.62) 30%,#000 42%,#000 80%,rgba(0,0,0,.6) 90%,rgba(0,0,0,0) 100%),linear-gradient(180deg,rgba(0,0,0,0) 0,rgba(0,0,0,.35) 9%,#000 20%,#000 80%,rgba(0,0,0,.4) 91%,rgba(0,0,0,0) 100%);-webkit-mask-composite:source-in;
+ mask-image:linear-gradient(90deg,rgba(0,0,0,0) 0,rgba(0,0,0,.06) 9%,rgba(0,0,0,.28) 19%,rgba(0,0,0,.62) 30%,#000 42%,#000 80%,rgba(0,0,0,.6) 90%,rgba(0,0,0,0) 100%),linear-gradient(180deg,rgba(0,0,0,0) 0,rgba(0,0,0,.35) 9%,#000 20%,#000 80%,rgba(0,0,0,.4) 91%,rgba(0,0,0,0) 100%);mask-composite:intersect}
+.mosaic-plane{position:absolute;left:50%;top:50%;width:210%;display:flex;flex-direction:column;gap:var(--gap);transform:translate(-50%,-50%) rotate(-22deg) skewX(-5deg)}
+.mosaic-row{overflow:hidden;width:100%;flex:none}
+.mosaic-track{display:flex;gap:var(--gap);width:max-content;animation:mosaic-run var(--dur,170s) linear infinite var(--dir,normal);animation-delay:var(--delay,0s);will-change:transform}
+.mosaic-track.rev{animation-direction:reverse}
+.mosaic-card{flex:none;width:var(--cw);aspect-ratio:4/3;border-radius:clamp(8px,.9vw,14px);overflow:hidden;background:#131313;border:1px solid rgba(240,240,240,.14);box-shadow:0 16px 36px rgba(0,0,0,.5),0 0 24px rgba(0,176,0,.10)}
+.mosaic-card img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 32%}
+@keyframes mosaic-run{to{transform:translateX(-50%)}}
+.hero-layout,.hero-bottomline{position:relative;z-index:3}
+/* o carrossel nunca para, mesmo com "reduzir movimento" ativo no sistema */
+.hero-mosaic .mosaic-track{animation-name:mosaic-run!important;animation-duration:var(--dur,170s)!important;animation-iteration-count:infinite!important;animation-timing-function:linear!important;animation-play-state:running!important}
+@media(max-width:900px){
+ .hero>.hero-mosaic:not(.horizon):not(.floater){--cw:clamp(104px,29vw,150px);position:relative;inset:auto;z-index:1;width:100vw;margin:1.6rem 0 0 calc(50% - 50vw);height:clamp(330px,96vw,480px)}
+ .mosaic-row:nth-child(n+8){display:none}
+ .mosaic-plane{width:260%}
+}
+@media(max-width:560px){.hero-mosaic{height:clamp(300px,96vw,400px)}}
+
+/* ===== Abertura ===== */
+.intro-gate{display:none}
+.intro-pending .intro-gate{position:fixed;inset:0;z-index:9999;display:grid;place-items:center;background:transparent;isolation:isolate;overflow:hidden}
+.intro-gate:not(.canvas-ready){background:#0a0a0a}
+.intro-canvas,.intro-particles-canvas{position:absolute;left:0;top:0;pointer-events:none}
+.intro-particles-canvas{width:100%;height:100%;z-index:3}
+.intro-center{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:clamp(26px,4.5vh,44px);text-align:center}
+.intro-center p{margin:0;font-size:.82rem;letter-spacing:.32em;text-transform:uppercase;color:#cfcfcf;font-weight:600;animation:intro-hint 3s ease-in-out infinite}
+@keyframes intro-hint{0%,100%{opacity:.55;transform:translateY(0)}50%{opacity:1;transform:translateY(3px)}}
+.intro-play{--tx:0deg;--ty:0deg;position:relative;display:grid;place-items:center;width:clamp(160px,23vw,224px);aspect-ratio:1;border:0;background:none;padding:0;cursor:pointer;perspective:760px;-webkit-tap-highlight-color:transparent;outline-offset:14px}
+.intro-play:focus-visible{outline:2px solid #88ef1b;border-radius:50%}
+.play-halo{position:absolute;inset:-34%;border-radius:50%;background:radial-gradient(circle,rgba(0,176,0,.58) 0%,rgba(0,132,0,.26) 34%,transparent 66%);filter:blur(10px);animation:play-pulse 2.6s ease-in-out infinite}
+.play-ripple{position:absolute;inset:6%;border-radius:50%;border:2px solid rgba(136,239,27,.7);opacity:0;animation:play-ripple 3.2s cubic-bezier(.2,.6,.3,1) infinite}
+.play-ripple.r2{animation-delay:1.6s}
+.play-tilt{position:absolute;inset:8%;transform-style:preserve-3d;transform:rotateX(var(--ty)) rotateY(var(--tx));transition:transform .35s ease-out}
+.play-body{position:absolute;inset:0;border-radius:50%;transform-style:preserve-3d;animation:play-float 5.6s ease-in-out infinite;
+ background:radial-gradient(circle at 30% 24%,#c9f5a0 0,#88ef1b 14%,#00b000 46%,#008400 82%,#005a00 100%);
+ box-shadow:inset 0 3px 7px rgba(255,255,255,.6),inset 0 -12px 22px rgba(0,60,0,.6),
+ 0 1px 0 #007a00,0 2px 0 #007600,0 3px 0 #007200,0 4px 0 #006e00,0 5px 0 #006a00,0 6px 0 #006600,0 7px 0 #006200,0 8px 0 #005e00,0 9px 0 #005a00,0 10px 0 #005600,0 11px 0 #005200,0 12px 0 #004e00,
+ 0 26px 38px rgba(0,0,0,.55),0 0 54px rgba(0,176,0,.65),0 0 120px rgba(0,176,0,.28)}
+.play-face{position:absolute;inset:13%;border-radius:50%;display:grid;place-items:center;transform:translateZ(14px);
+ background:radial-gradient(circle at 34% 26%,#262626 0,#131313 55%,#0a0a0a 100%);box-shadow:inset 0 5px 12px rgba(0,0,0,.85),inset 0 -3px 8px rgba(136,239,27,.28),0 0 0 2px rgba(10,10,10,.5)}
+.play-face svg{width:58%;height:58%;overflow:visible;transform:translate(5%,0) translateZ(10px);filter:drop-shadow(0 0 7px rgba(136,239,27,.85)) drop-shadow(0 0 20px rgba(0,176,0,.75));animation:play-tri 2.6s ease-in-out infinite}
+.intro-play:hover .play-body{filter:brightness(1.1) saturate(1.08)}
+.intro-gate.is-opening .intro-play,.intro-gate.is-opening .intro-center p{pointer-events:none}
+@keyframes play-float{0%,100%{transform:translateY(8px) rotateX(5deg) rotateY(-9deg) rotateZ(-2deg)}50%{transform:translateY(-10px) rotateX(-4deg) rotateY(9deg) rotateZ(2deg)}}
+@keyframes play-pulse{0%,100%{opacity:.6;transform:scale(.88)}50%{opacity:1;transform:scale(1.18)}}
+@keyframes play-ripple{0%{opacity:.75;transform:scale(.86)}100%{opacity:0;transform:scale(1.7)}}
+@keyframes play-tri{0%,100%{filter:drop-shadow(0 0 5px rgba(136,239,27,.7)) drop-shadow(0 0 14px rgba(0,176,0,.6))}50%{filter:drop-shadow(0 0 10px rgba(136,239,27,1)) drop-shadow(0 0 30px rgba(0,176,0,.95))}}
+/* a abertura anima sempre, inclusive com "reduzir movimento" */
+.intro-gate .play-halo{animation:play-pulse 2.6s ease-in-out infinite!important}
+.intro-gate .play-ripple{animation:play-ripple 3.2s cubic-bezier(.2,.6,.3,1) infinite!important}
+.intro-gate .play-ripple.r2{animation-delay:1.6s!important}
+.intro-gate .play-body{animation:play-float 5.6s ease-in-out infinite!important}
+.intro-gate .play-face svg{animation:play-tri 2.6s ease-in-out infinite!important}
+.intro-gate .intro-center p{animation:intro-hint 3s ease-in-out infinite!important}
+.intro-gate.is-opening .play-body,.intro-gate.is-opening .play-halo{animation-play-state:running!important}
+/* site borrado até a home ficar nítida (1 s) */
+.intro-site-blur{filter:blur(14px)!important}
+.intro-site-sharpen{animation:site-sharpen 1s cubic-bezier(.22,1,.36,1) both!important}
+@keyframes site-sharpen{from{filter:blur(14px)}to{filter:blur(0)}}
+
+/* mosaico em pausa enquanto a abertura está na tela (mais leve durante o blur) */
+.intro-pending .hero-mosaic .mosaic-track{animation-play-state:paused!important}

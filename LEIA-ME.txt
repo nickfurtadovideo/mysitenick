@@ -1,0 +1,127 @@
+NK.DSGNR — PORTFÓLIO V3
+
+PUBLICAÇÃO
+Extraia o ZIP. Envie index.html, src e .nojekyll à raiz do repositório MY-PAGE, mantendo index.html e src lado a lado. Não envie o ZIP fechado como site.
+
+NOVIDADES
+- Nova paleta: #FFFEFE, #E2E5E2, #0A1C0B, #070C08 e #1FB951.
+- Modo noturno inicial; botão de dia/noite com preferência salva no navegador.
+- Fundo contínuo, sem divisões de cor entre seções; grid discreto próximo ao cursor.
+- Carrossel curvado de motion/vídeo na segunda seção, logo após Home.
+- Galeria de imagens em perspectiva 3D, com loop contínuo e ampliação ao clicar.
+- Controles anterior/próximo, pausa, navegação por teclado e suporte ao toque.
+- Pausa fora da tela e respeito à preferência de movimento reduzido.
+- Botões claros com glow e deslocamento suave no hover.
+- Glow discreto nos quadros próximos ao cursor.
+- Serviços clicáveis com acesso a motion, UGC ou categorias da galeria.
+- Seção UGC Characters com as nove fotos enviadas no RAR.
+
+SOBRE OS NOVOS VÍDEOS
+O arquivo enviado com o nome UGC CHARACTERS VÍDEO.rar contém nove JPGs, e nenhum vídeo. Por isso, a nova seção UGC usa essas imagens. O carrossel de motion usa o vídeo local, as animações e o projeto do YouTube que já estavam no site. Novos vídeos não foram inventados nem substituídos por material externo.
+Para acrescentar vídeos, coloque os MP4 em src/assets e adicione itens em window.__WORKS__ no arquivo src/js/projects.js. Use campos titulo, categoria, descricao, video (caminho ./src/assets/nome.mp4) e capa (caminho da imagem). O carrossel de motion lê essa lista automaticamente.
+Os vídeos de prévia são silenciosos e dependem das permissões de reprodução automática do navegador. Na ampliação, os vídeos têm controles; o YouTube exige internet.
+
+ARQUIVOS PRINCIPAIS
+index.html: conteúdo e estrutura.
+src/css/experience.css: nova identidade, temas e carrosséis.
+src/js/theme-init.js: aplica o tema salvo antes do conteúdo.
+src/js/experience.js: carrosséis curvados, ampliação, tema e glow.
+src/js/ugc-data.js: imagens da seção UGC.
+src/js/projects.js: projetos existentes.
+
+Verificações técnicas e de integridade realizadas. As alterações estão nos arquivos deste pacote; o site publicado no GitHub não foi alterado automaticamente.
+
+TESTES NO NAVEGADOR
+Chromium: temas claro/escuro, persistência após recarregar, abertura de mídia, navegação UGC, filtro de Branding pelo serviço, menu mobile e movimento reduzido verificados. Larguras 320, 390, 768 e 1440 px sem overflow horizontal. Nenhum erro de JavaScript nos testes finais.
+
+AJUSTES V4
+- Carrosséis curvados continuam se movendo sob o cursor e com foco. Pausa explícita, mídia ampliada, aba inativa, fora da tela e preferência de movimento reduzido continuam respeitados.
+- Três fotos da Home levam ao Behance em nova aba.
+- Topo ↑ destacado; símbolos flutuantes distribuídos no fundo da Home.
+- Animação de entrada em cada seção, uma vez por percurso. Só reinicia ao voltar ao topo.
+- Abertura com play vetorial 3D, glow e flutuação, seguida de partículas em espiral.
+- Testado no Chromium: abertura, movimento contínuo sob cursor/foco, ausência de reset no meio da página, reset ao chegar ao topo, celular sem overflow, modo de movimento reduzido e ausência de erros JavaScript.
+
+AJUSTES V5
+- Home atualizada com três imagens de home.rar: novo mascote 4Play, Carnaval de Prêmios e arte de Josifer. O RAR contém 12 imagens; essas três foram selecionadas para os três quadros existentes.
+- Criatividade em perspectiva: substituído o conjunto desse carrossel pelas 21 imagens do RAR correspondente, sem trocar as imagens das outras galerias. Imagens completas preservadas na ampliação.
+- Satoshi incluída localmente em src/fonts nos pesos 400, 500, 700 e 900.
+- Após a abertura em espiral, o site passa de blur para nitidez em 1 segundo. Movimento reduzido continua respeitado.
+- Testado no Chromium: carregamento da fonte e das três imagens, 21 cartões, abertura da imagem original, blur inicial e nitidez final, larguras 320/390/768/1440 px sem overflow horizontal e sem erros JavaScript.
+
+ATUALIZAÇÃO V6
+- Home: quatro quadros (1:1 e 3:4), 12 imagens de home.rar, sequência embaralhada sem repetição no ciclo e troca a cada 4 segundos com fade de 800ms.
+- Imagens de prévia usam recorte proporcional (cover); visualização ampliada preserva a arte inteira.
+- Criatividade em perspectiva após Sobre mim.
+- Faixa contínua com 12 logos PNG brancos, incluindo conversão dos quatro SVGs de logos.rar, após Design que merece ser visto.
+- Movimento reduzido do sistema desativa o deslocamento dos logos e a transição de fade.
+- Validado em larguras 320, 390, 768 e 1440 pixels, sem transbordamento horizontal ou erros JavaScript.
+
+ATUALIZAÇÃO V7
+- Home: os quatro quadros foram substituídos por um leque de cartas com as 17 imagens de home2.rar (arquivos src/assets/home-card-01 a 17.webp, otimizados para 600 px de largura).
+- Leque: cinco cartas visíveis, a central em destaque. Troca automática a cada 4,5 s; pausa ao passar o mouse, ao focar com o teclado, com a aba oculta ou fora da tela. Setas ← → na tela e no teclado, clique numa carta lateral para trazê-la ao centro, arrastar/deslizar no toque. Clicar na carta central abre o Behance em nova aba.
+- Movimento reduzido do sistema: sem troca automática e sem transições.
+- Logos: a faixa contínua logo abaixo de "Design que merece ser visto." agora usa os 15 arquivos de logos2.rar (4 SVGs rasterizados), convertidos em branco, recortados e com tamanho visual equilibrado (src/assets/logo-white-01 a 15.png).
+- Arquivos novos: src/css/update-v7.css e src/js/home-fan.js. Removidos: src/js/home-slideshow.js, as imagens home-slide-* e os logos antigos.
+- Testado no Chromium (larguras 320, 390, 768 e 1440 px): sem overflow horizontal e sem erros de JavaScript.
+
+AJUSTES V7.1
+- Imagens de prévia preenchem por completo os retângulos (object-fit: cover, corte proporcional, sem barras e sem distorção), inclusive em "Criatividade em perspectiva". A ampliação (visualizador) continua mostrando a arte inteira.
+- Carrossel de logos: loop contínuo e infinito (4 grupos idênticos, deslocamento de -50%), imagens sem carregamento preguiçoso. Agora também roda quando o sistema está com "reduzir movimento", que antes congelava a faixa.
+- O site sempre abre em tema noturno, ignorando preferência antiga salva. O botão Dia/Noite continua funcionando durante a visita, sem gravar a escolha.
+
+ATUALIZAÇÃO V8
+- Home: cinco cartas grandes (48% da largura do palco), em disposição aleatória sobreposta, alinhadas à direita e dentro das margens do site. A coluna do leque ficou mais larga (colunas 0,96fr / 1,04fr).
+- Troca a cada 3 segundos, todas as cartas de uma vez, sorteando entre as 17 imagens de home2.rar: nunca há duas cartas iguais na tela, nem repetição das que acabaram de sair. Transição de fade (entrada e saída) de 0,9 s, com pequeno atraso entre as cartas. A cada troca, posição e inclinação variam levemente.
+- Pausa ao passar o mouse ou focar com o teclado, com a aba oculta ou com a home fora da tela. Clicar numa carta abre o Behance em nova aba.
+- Com "reduzir movimento" no sistema, o fade continua, mas as cartas não se deslocam.
+- Arquivos: src/css/update-v8.css e src/js/home-fan.js (reescrito). src/css/update-v7.css ficou só com a faixa de logos.
+- Testado no Chromium em 390, 1100, 1440 e 1920 px: sem overflow horizontal, sem erros de JavaScript, 5 imagens distintas e troca confirmada a cada ciclo.
+
+VERSÃO 8.1
+- Abertura restaurada. Causa do sumiço: ao forçar o tema noturno na v7.1, o arquivo src/js/theme-init.js foi reescrito e perdeu as linhas que ativam a tela de abertura. Já corrigido.
+- Abertura nova: só um botão play 3D com glow, pulsante e flutuante (leves inclinações que seguem o mouse), nas cores da paleta, com o texto "Comece por aqui" embaixo. Ao clicar: espiral fluida de 3 braços (máscara em baixa resolução, escalada com suavização) com partículas vetoriais leves (círculos, anéis, cruzes, losangos, triângulos e traços) revelam a home. Depois, o site aparece borrado e fica nítido em 1 segundo.
+- A abertura anima mesmo com "reduzir movimento" ativo no sistema (antes ela era pulada nesse caso).
+- Home: mosaico diagonal (inclinado para a esquerda, como na referência) em carrossel infinito, 10 linhas que correm em sentidos alternados, cards 4:3 usando as 17 imagens de home2.rar, com degradê esmaecido nas extremidades. Os cards são decorativos (sem link). O carrossel roda mesmo com "reduzir movimento". Para trocar a proporção, altere aspect-ratio em .mosaic-card (src/css/update-v8-1.css).
+- Paleta nova (referência: Onyx #131313, Vivid Green #00B000, Lime #88EF1B, Paper White #F0F0F0, Stone Gray #777777, Light Green #BFEBBF, gradiente #0A0A0A > #008400 > #00B000 > #8CDB8C). Fundo mais escuro e neutro. Todas as variáveis ficam no topo de src/css/update-v8-1.css.
+- Títulos com entrelinha menor (home 1,03; seções 1,05).
+- Tamanho: removidos 27 arquivos não usados; imagens e animações .webp recomprimidas sem perder quadros; vídeo reencodado (3,0 MB para 1,9 MB).
+- Arquivos novos/alterados: src/css/update-v8-1.css, src/js/intro.js, src/js/theme-init.js, index.html. Removidos: home-fan.js e update-v8.css.
+
+VERSÃO 8.2 — AJUSTES SOBRE O ZIP 8.1
+- Abertura restaurada em toda visita: play 3D, glow, pulsação e flutuação.
+- Clique: partículas vetoriais e fade da Home dentro de 1 segundo total; sem espiral e sem blur adicional.
+- Home: 30 imagens do home2(1).rar; mosaico à direita do texto em três colunas inclinadas, cards verticais 3:4, recorte proporcional e loop contínuo com grupos duplicados e bordas esmaecidas. No celular, mosaico abaixo do texto.
+- Títulos com entrelinha mais compacta.
+- Paleta Onyx/verde vivo da versão 8.1 preservada. O anexo EXEMPLO.png é referência de composição monocromática, não contém uma paleta colorida separada.
+- Preferência de movimento reduzido respeitada.
+- Publicação: extraia e envie index.html, .nojekyll e src juntos à raiz publicada do GitHub Pages.
+
+VERSÃO 8.3
+Área de imagens da Home ampliada em desktop e celular. Degradê somente no topo e na parte inferior; laterais sem esmaecimento. Demais recursos da v8.2 preservados.
+
+VERSÃO 8.4
+Mosaico da Home expandido até a lateral da tela, sem caixa interna de recorte. As cartas mantêm proporção vertical 3:4, movimento contínuo e separação do texto. Degradê apenas no topo e na base. No celular, a galeria ocupa a largura da tela abaixo do texto.
+
+ATUALIZAÇÃO V8.5 — somente conteúdo de Motion & vídeo
+12 vídeos do arquivo IDEIAS QUE GANHAM MOVIMENTO.rar substituem os itens anteriores. Seção Portfólio — Vídeo, motion e personagens removida e suas mídias antigas excluídas. Intro, estilos e demais conteúdos preservados. Links da seção removida apontam para Motion & vídeo.
+
+VERSÃO 8.6
+Serviços: seis cards coloridos empilhados por rolagem, sem fotos de fundo, com ícones SVG e revelação de texto. Mantidos os links dos serviços.
+Projetos visuais: 15 imagens de Design que merece ser visto.rar, com miniaturas otimizadas e ampliação. Arquivos antigos removidos somente quando não referenciados em outras seções. Intro e Motion & vídeo preservados.
+
+VERSÃO 8.7 — OTIMIZAÇÃO DE DESEMPENHO
+Peso na abertura (Home, após o play): 3,9 MB -> 1,7 MB. Total ao rolar a página toda: 13,4 MB -> 8,6 MB (desktop). Requisições na abertura: 91 -> 74.
+- Imagens da Home (30 arquivos home82-*): redimensionadas de 780 px para 460 px de largura (exibidas a no máximo ~230 px). 2,4 MB -> 0,8 MB. Atributos width/height corrigidos (antes 780x1040 não correspondiam aos arquivos).
+- Miniaturas dos carrosséis (perspective-v5-*-thumb e capas motion-new-*.webp estáticas) reduzidas para no máximo 420x560. 1,6 MB -> 0,66 MB.
+- UGC: 9 JPG convertidos para WebP (0,95 MB -> 0,30 MB). Logos: PNG convertidos para WebP.
+- Vídeos: motion-new-02, 06, 07 e 12 reencodados em 720p (02: 2,5 MB -> 0,67 MB). Os demais já estavam bem comprimidos e foram mantidos.
+- ARQUIVO QUEBRADO CORRIGIDO: src/assets/design86-04.webp tinha 0 bytes (ampliação do projeto "COMPLIANCE" não abria). Agora a ampliação usa a miniatura. Substitua por uma versão completa quando puder, mantendo o nome design86-04.webp e ajustando o caminho em projects.js.
+- 11 arquivos CSS -> 1 (site.min.css) e 9 arquivos JS -> 1 (site.min.js): menos requisições e menos bloqueio de renderização.
+- Fontes Satoshi 400 e 900 pré-carregadas (preload).
+- Imagens fora da primeira tela agora usam loading="lazy" (mosaico da Home: só as 3 primeiras de cada coluna carregam de imediato).
+- Mosaico da Home e faixa de logos pausam quando saem da tela ou a aba fica oculta (src/_fonte/js/perf.js).
+- Seções Posts, UGC e Contato só renderizam perto da tela (content-visibility).
+- Brilho do cursor (experience.js): leitura e escrita de layout separadas e só atualiza quando o valor muda; carrosséis não recalculam cartas fora da tela a cada quadro.
+EDITAR O SITE: os arquivos-fonte originais estão em src/_fonte (css e js). Depois de editar, rode "sh src/_fonte/build.sh" (requer Node e "npm i esbuild") para regenerar site.min.css e site.min.js. Se não usar o build, edite direto os arquivos site.min.*.
+PUBLICAÇÃO: envie index.html, .nojekyll e a pasta src inteira.

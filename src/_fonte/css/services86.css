@@ -1,0 +1,19 @@
+#servicos .service-stack{display:block;max-width:1000px;margin:64px auto 0;padding-bottom:4px}
+#servicos .service-card{position:sticky;top:100px;z-index:var(--card-index);display:flex;flex-direction:column;justify-content:space-between;min-height:370px;padding:44px;margin-bottom:28vh;border:1px solid #ffffff24;border-radius:28px;overflow:hidden;background:#bfebbf;color:#131313;box-shadow:0 20px 65px #0003;transform:none;opacity:1;isolation:isolate}
+#servicos .service-card:last-child{margin-bottom:0}
+#servicos .service-card:nth-child(3n+2){background:#88ef1b}
+#servicos .service-card:nth-child(3n){background:#131313;color:#f0f0f0;border-color:#88ef1b55}
+#servicos .service-card:before,#servicos .service-card:after{content:none}
+#servicos .bento-header{display:flex;align-items:center;justify-content:space-between;position:relative;inset:auto}
+#servicos .bento-ico{width:54px;height:54px;fill:none;stroke:currentColor;stroke-width:1.4;opacity:.85}
+#servicos .bento-body{position:relative;inset:auto;margin:28px 0;max-width:720px}
+#servicos .bento-body h3{font-size:clamp(1.7rem,4vw,3rem);line-height:1.12;color:inherit}
+#servicos .bento-body p{font-size:clamp(1rem,1.5vw,1.2rem);color:inherit;opacity:.85;max-width:650px}
+#servicos .bento-tag,#servicos .service-action{color:inherit;background:transparent;border-color:currentColor;position:relative;inset:auto}
+#servicos .service-action{align-self:flex-start}
+#servicos .service-card.text-reveal .bento-body h3{animation:service-text .65s ease both}
+#servicos .service-card.text-reveal .bento-body p{animation:service-text .65s .12s ease both}
+#servicos .service-card.text-reveal .service-action{animation:service-text .65s .22s ease both}
+@keyframes service-text{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:600px){#servicos .service-card{top:86px;min-height:350px;padding:28px;margin-bottom:22vh;border-radius:22px}#servicos .service-card:last-child{margin-bottom:0}#servicos .service-stack{margin-top:36px}}
+@media(prefers-reduced-motion:reduce){#servicos .service-card *{animation:none!important}}

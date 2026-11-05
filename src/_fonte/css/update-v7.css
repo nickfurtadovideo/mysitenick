@@ -1,0 +1,15 @@
+/* V7 — faixa de logos (logos2). O leque da home está em update-v8.css */
+/* Logos */
+.logo-ribbon{position:relative;overflow:hidden;padding:36px 0;margin:0;background:#131313;mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
+.logo-track{display:flex;width:max-content;animation:logo-travel 150s linear infinite;will-change:transform}
+.logo-group{display:flex;align-items:center;gap:72px;padding-right:72px;flex-shrink:0}
+.logo-group img{--k:1;display:block;width:calc(var(--w)*var(--k)*1px);height:auto;max-height:calc(84px*var(--k));object-fit:contain;flex-shrink:0;border:0;box-shadow:none;background:transparent}
+@keyframes logo-travel{to{transform:translateX(-50%)}}
+@media(max-width:600px){.logo-group{gap:40px;padding-right:40px}.logo-group img{--k:.78}}
+
+/* V7.1 — imagens preenchem os retângulos por completo (corte proporcional, sem barras e sem distorção) */
+#nk-destaques .curve-card,#nk-destaques .curve-card-contain{background:var(--forest)}
+#nk-destaques .curve-card img,#nk-destaques .curve-card video,#nk-destaques .curve-card-contain img{width:100%;height:100%;object-fit:cover!important;object-position:center;padding:0;background:transparent}
+.post-item img,.bento-card img,.ugc-card img,.portrait-card img,.carousel-card img{object-fit:cover;object-position:center}
+/* O carrossel de logos é contínuo e infinito em qualquer configuração (a regra global de movimento reduzido o congelava). */
+.logo-ribbon .logo-track{animation-name:logo-travel!important;animation-duration:150s!important;animation-timing-function:linear!important;animation-iteration-count:infinite!important;animation-delay:0s!important;animation-play-state:running!important}

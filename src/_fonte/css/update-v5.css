@@ -1,0 +1,13 @@
+@font-face{font-family:Satoshi;src:url('../fonts/Satoshi-400.woff2') format('woff2');font-style:normal;font-weight:400;font-display:swap}
+@font-face{font-family:Satoshi;src:url('../fonts/Satoshi-500.woff2') format('woff2');font-style:normal;font-weight:500;font-display:swap}
+@font-face{font-family:Satoshi;src:url('../fonts/Satoshi-700.woff2') format('woff2');font-style:normal;font-weight:700;font-display:swap}
+@font-face{font-family:Satoshi;src:url('../fonts/Satoshi-900.woff2') format('woff2');font-style:normal;font-weight:900;font-display:swap}
+:root{--font:Satoshi,Arial,sans-serif}html,body,button,input,select,textarea{font-family:var(--font)}
+.intro-site-blur{filter:blur(12px)}
+.intro-site-sharpen{animation:site-sharpen 1s cubic-bezier(.22,1,.36,1) both}
+@keyframes site-sharpen{from{filter:blur(12px)}to{filter:blur(0)}}
+#nk-destaques .curve-card-contain{background:var(--surface)}
+#nk-destaques .curve-card-contain img{object-fit:contain}
+.hero-work-side-top img,.hero-work-side-bottom img{object-position:center}
+@media(prefers-reduced-motion:reduce){.intro-site-blur{filter:none}.intro-site-sharpen{animation:none;filter:none}}
+.hero-work-side-bottom img{object-fit:contain;background:#0a0a0a}

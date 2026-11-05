@@ -1,0 +1,4 @@
+Satoshi — Indian Type Foundry / Fontshare.
+Official source: https://www.fontshare.com/fonts/satoshi
+Fontshare free font; see current licensing terms at https://www.fontshare.com/terms
+Downloaded WOFF2 weights: 400, 500, 700, 900.
