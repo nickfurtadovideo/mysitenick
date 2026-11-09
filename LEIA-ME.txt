@@ -125,3 +125,16 @@ Peso na abertura (Home, após o play): 3,9 MB -> 1,7 MB. Total ao rolar a págin
 - Brilho do cursor (experience.js): leitura e escrita de layout separadas e só atualiza quando o valor muda; carrosséis não recalculam cartas fora da tela a cada quadro.
 EDITAR O SITE: os arquivos-fonte originais estão em src/_fonte (css e js). Depois de editar, rode "sh src/_fonte/build.sh" (requer Node e "npm i esbuild") para regenerar site.min.css e site.min.js. Se não usar o build, edite direto os arquivos site.min.*.
 PUBLICAÇÃO: envie index.html, .nojekyll e a pasta src inteira.
+
+VERSÃO 9
+- Localização: removido "Teresina" (Home, rodapé, cartão de estatísticas e dados estruturados). Fica só "Brasil".
+- Formação: removido "UFPI". Fica só "Artes Visuais".
+- Cargo: "Diretor de Arte Multimídia" no texto de Sobre mim, no título de compartilhamento e nos dados estruturados.
+- Textos sem travessão (títulos, descrições, projetos e galerias).
+- "Explorar trabalhos" agora em verde (classe btn-cta).
+- Home: removida a etiqueta "Portfólio criativo / 2026"; texto desceu um pouco. Removido "Deslize para explorar", fica "Criação em movimento".
+- Mobile: mosaico da Home acima do texto, num quadro 2:1.
+- Mobile: "Design que merece ser visto" em 2 colunas.
+- Botão flutuante de topo (só a seta, sempre visível, canto inferior direito).
+- Faixa de logos movida para logo abaixo de "Criatividade em perspectiva", com o título "Marcas que confiam no meu trabalho".
+Arquivos fonte alterados: src/_fonte/css/update-v9.css (novo), src/_fonte/js/*.js (textos), src/_fonte/build.sh. Depois de editar a fonte, rode o build para gerar site.min.css e site.min.js.
